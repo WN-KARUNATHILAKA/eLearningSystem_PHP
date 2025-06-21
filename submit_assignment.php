@@ -16,7 +16,7 @@ if ($assignmentID === 0) {
     exit();
 }
 
-// Handle form submission
+// form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"])) {
     $file = $_FILES["file"];
     $uploadDir = "uploads/";
