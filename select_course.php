@@ -9,14 +9,14 @@ if (!isset($_SESSION['userID'])) {
 
 $userID = $_SESSION['userID'];
 
-// Get enrolled course IDs for this student
+// enrolled course student
 $enrolled = [];
 $enrolledResult = $conn->query("SELECT courseID FROM enrollments WHERE userID = '$userID'");
 while ($row = $enrolledResult->fetch_assoc()) {
     $enrolled[] = $row['courseID'];
 }
 
-// Handle form submission
+// form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['courses'])) {
     $selectedCourses = $_POST['courses'];
 
